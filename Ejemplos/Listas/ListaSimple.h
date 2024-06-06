@@ -79,6 +79,38 @@ void ListaSimple::eliminarInicio()
             Nodo *segundo = primero->getSiguiente();
             delete primero;
             primero = segundo;
+        }   
+    } 
+}
+
+void ListaSimple::eliminarFinal()
+{
+    if (ListaSimple::estaVacia())
+    {
+        cout << "La lista está vacía" << endl;
+    }
+    else{
+        Nodo* temporal = primero;
+        if (primero == ultimo)
+        {
+            /* code */
+            delete primero;
+            primero = ultimo = nullptr;
+        }
+        else{
+            while (temporal != nullptr)
+            {
+                /* code */
+                if (temporal->getSiguiente() == ultimo) //Si el siguiente de temporal es el último, entonces temporal es el antepenultimo
+                {
+                    /* code */
+                    delete ultimo;
+                    temporal->setSiguiente(nullptr);
+                    ultimo = temporal;
+                }
+                temporal = temporal->getSiguiente(); //Recorriendo la lista
+            }
+            
         }
         
     }
