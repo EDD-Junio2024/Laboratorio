@@ -34,10 +34,11 @@ int main()
     miLista.insertarFinal(150);
     miLista.insertarInicio(300);
     miLista.visualizarLista();
+    miLista.generarReporte();
     cout << endl;
-    miLista.eliminarFinal();
+    /*miLista.eliminarFinal();
     miLista.eliminarInicio();
-    miLista.visualizarLista();
+    miLista.visualizarLista();*/
 
     return 0;
 }

@@ -1,2 +1,4 @@
 *.exe
+*.dot
+*.png
 **.vscode/

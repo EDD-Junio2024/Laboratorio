@@ -1,3 +1,5 @@
+#include <fstream> //cabecera para manejar archivos (leer y escribir)
+#include <cstdlib> //cabecera para manejar el system (cmd)
 #include <iostream>
 using namespace std;
 #include "Nodo.h"
@@ -16,6 +18,7 @@ public:
     void eliminarInicio();
     void eliminarFinal();
     void visualizarLista();
+    void generarReporte();
     ~ListaCircular();
 };
 
@@ -140,6 +143,37 @@ void ListaCircular::visualizarLista()
     }
 }
 
+void ListaCircular::generarReporte(){
+    if (ListaCircular::estaVacia()){}
+    else
+    {
+        ofstream archivo; //
+        archivo.open("grafica_LC.dot", ios::out);
+        archivo << "digraph G { rankdir = LR; " << endl;
+
+        int nodoDato;
+        Nodo *actual = primero;
+        do
+        {
+            nodoDato = actual->getDato();
+            archivo << nodoDato;
+            archivo << " -> ";
+            actual = actual->getSiguiente();
+            if (actual == primero)
+            {
+                archivo << actual->getDato();
+            }
+            
+        } while (actual != primero);
+
+        archivo << "; }";
+        archivo.close();
+        system("dot -Tpng grafica_LC.dot -o grafica_LC.png");
+        system("start grafica_LC.png");
+    }
+    
+
+}
 
 ListaCircular::~ListaCircular()
 {
