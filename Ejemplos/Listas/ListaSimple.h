@@ -122,7 +122,7 @@ void ListaSimple::visualizarLista()
     if (ListaSimple::estaVacia())
     {
         /* code */
-        cout << "La lista está vacía\n" << endl;
+        cout << "La lista está vacía" << endl;
     }
     else
     {
@@ -132,7 +132,8 @@ void ListaSimple::visualizarLista()
         {
             /* code */
             nodoDato = actual->getDato();
-            cout << nodoDato << endl;
+            //cout << nodoDato << endl;
+            cout << nodoDato << (actual->getSiguiente() != nullptr ? " -> ": "\n");
             actual = actual->getSiguiente();
         }
         

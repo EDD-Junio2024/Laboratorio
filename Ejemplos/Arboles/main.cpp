@@ -13,7 +13,7 @@ int main()
     miArbolBB.insertar(32);
     miArbolBB.insertar(15);
     miArbolBB.insertar(25);
-    miArbolBB.buscar(25);
+    //miArbolBB.buscar(25);
     cout << endl;
     miArbolBB.Recorrido(); //30, 20, 15, 25, 33, 32, 40, 34
     miArbolBB.generarReporte();

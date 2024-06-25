@@ -102,14 +102,14 @@ void ArbolBB::Recorrido(Nodo* nodoPtr)
     if (nodoPtr != nullptr)
     {
         //PREORDEN
-        /*cout << nodoPtr->getDato() << endl;
+        cout << nodoPtr->getDato() << endl;
         Recorrido(nodoPtr->getIzq());
-        Recorrido(nodoPtr->getDer());*/
+        Recorrido(nodoPtr->getDer());
 
         //INORDEN
-        Recorrido(nodoPtr->getIzq());
+        /*Recorrido(nodoPtr->getIzq());
         cout << nodoPtr->getDato() << endl;
-        Recorrido(nodoPtr->getDer());
+        Recorrido(nodoPtr->getDer());*/
 
         //POSTORDEN
     }
